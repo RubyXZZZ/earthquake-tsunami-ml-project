@@ -1,19 +1,18 @@
 import requests
 import pandas as pd
-from io import StringIO
-from datetime import datetime
-import time
 import os
 
-START_DATE = '2001-01-01'
-END_DATE = '2022-12-31'
+START_DATE = '1995-01-01'
+END_DATE = '2025-10-31'
 MIN_MAGNITUDE = 6.5
 OUTPUT_FILE = './earthquake_usgs_raw.csv'
 
 TARGET_COLUMNS = [
-    'title', 'magnitude', 'year', 'month',
-    'cdi', 'mmi', 'sig', 'net', 'nst', 'dmin', 'gap',
-    'depth', 'latitude', 'longitude', 'tsunami'
+    'title',
+    'magnitude', 'cdi', 'mmi', 'sig', 'nst', 'dmin', 'gap',
+    'depth', 'latitude', 'longitude','year', 'month','tsunami',
+    'place', 'alert', 'magType', 'rms',
+    'code', 'net', 'type', 'status', 'datetime'
 ]
 
 def get_earthquakes_data():
@@ -41,30 +40,32 @@ def get_earthquakes_data():
             for feature in data['features']:
                 props = feature['properties']
                 coords = feature['geometry']['coordinates']
-
-            for feature in data['features']:
-                props = feature['properties']
-                coords = feature['geometry']['coordinates']
+                timestamp = pd.to_datetime(props.get('time'), unit='ms')
 
                 record = {
                     'title': props.get('title'),
                     'magnitude': props.get('mag'),
-                    'year':pd.to_datetime(props.get('time'), unit='ms').year,
-                    'month': pd.to_datetime(props.get('time'), unit='ms').month,
                     'cdi': props.get('cdi'),
                     'mmi': props.get('mmi'),
-                    # 'alert': props.get('alert'),
                     'sig': props.get('sig'),
-                    'net': props.get('net'),
                     'nst': props.get('nst'),
                     'dmin': props.get('dmin'),
                     'gap': props.get('gap'),
-                    # 'magType': props.get('magType'),
                     'depth': coords[2],
                     'latitude': coords[1],
                     'longitude': coords[0],
-                    # 'location': props.get('place'),
+                    'year': timestamp.year,
+                    'month': timestamp.month,
                     'tsunami': props.get('tsunami'),
+                    'place': props.get('place'),
+                    'alert': props.get('alert'),
+                    'magType': props.get('magType'),
+                    'rms': props.get('rms'),
+                    'code': props.get('code'),
+                    'net': props.get('net'),
+                    'type': props.get('type'),
+                    'status': props.get('status'),
+                    'datetime': timestamp,
                 }
 
                 records.append(record)
@@ -73,7 +74,9 @@ def get_earthquakes_data():
             print(f"Created DataFrame with {len(df)} records")
 
             # make sure output directory exists
-            os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
+            output_dir = os.path.dirname(OUTPUT_FILE)
+            if output_dir:
+                os.makedirs(output_dir, exist_ok=True)
 
             # save CSV
             df.to_csv(OUTPUT_FILE, index=False)
