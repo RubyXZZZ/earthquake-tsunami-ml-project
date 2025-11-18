@@ -12,7 +12,7 @@ OUTPUT_FILE = './earthquake_usgs_raw.csv'
 
 TARGET_COLUMNS = [
     'title', 'magnitude', 'year', 'month',
-    'cdi', 'mmi', 'sig', 'nst', 'dmin', 'gap',
+    'cdi', 'mmi', 'sig', 'net', 'nst', 'dmin', 'gap',
     'depth', 'latitude', 'longitude', 'tsunami'
 ]
 
@@ -46,7 +46,6 @@ def get_earthquakes_data():
                 props = feature['properties']
                 coords = feature['geometry']['coordinates']
 
-                # 只提取你需要的字段
                 record = {
                     'title': props.get('title'),
                     'magnitude': props.get('mag'),
@@ -56,7 +55,7 @@ def get_earthquakes_data():
                     'mmi': props.get('mmi'),
                     # 'alert': props.get('alert'),
                     'sig': props.get('sig'),
-                    # 'net': props.get('net'),
+                    'net': props.get('net'),
                     'nst': props.get('nst'),
                     'dmin': props.get('dmin'),
                     'gap': props.get('gap'),
