@@ -72,7 +72,8 @@ def apply_one_hot_encoding(df: pd.DataFrame,
         df,
         columns=target_cols,
         prefix=target_cols,
-        drop_first=drop_first
+        drop_first=drop_first,
+        dtype=int,
     )
 
     return df_encoded
