@@ -2,10 +2,10 @@ import requests
 import pandas as pd
 import os
 
-START_DATE = '1995-01-01'
+START_DATE = '2013-01-01'
 END_DATE = '2025-10-31'
-MIN_MAGNITUDE = 6.5
-OUTPUT_FILE = './earthquake_usgs_raw.csv'
+MIN_MAGNITUDE = 6
+OUTPUT_FILE = './earthquake_tsunami_raw_data.csv'
 
 TARGET_COLUMNS = [
     'title',
