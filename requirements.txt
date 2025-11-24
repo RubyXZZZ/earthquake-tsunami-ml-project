@@ -18,3 +18,5 @@ requests==2.32.5
 urllib3==2.5.0
 folium==0.20.0
 xgboost == 3.1.2
+optuna==4.6.0
+joblib==1.5.2
