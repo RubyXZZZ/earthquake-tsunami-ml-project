@@ -1,0 +1,44 @@
+{
+    "scaling_cols": [
+        "magnitude",
+        "dmin",
+        "gap",
+        "depth",
+        "year",
+        "rms",
+        "X",
+        "Y",
+        "Z",
+        "month_sin",
+        "month_cos"
+    ],
+    "exclude_cols": [
+        "magType_mb",
+        "magType_ml",
+        "magType_mw",
+        "magType_mwb",
+        "magType_mwc",
+        "magType_mwr",
+        "magType_mww"
+    ],
+    "feature_names": [
+        "magnitude",
+        "dmin",
+        "gap",
+        "depth",
+        "year",
+        "rms",
+        "X",
+        "Y",
+        "Z",
+        "month_sin",
+        "month_cos",
+        "magType_mb",
+        "magType_ml",
+        "magType_mw",
+        "magType_mwb",
+        "magType_mwc",
+        "magType_mwr",
+        "magType_mww"
+    ]
+}

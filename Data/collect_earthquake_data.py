@@ -5,7 +5,7 @@ import os
 START_DATE = '2013-01-01'
 END_DATE = '2025-10-31'
 MIN_MAGNITUDE = 6
-OUTPUT_FILE = './earthquake_tsunami_raw_data.csv'
+OUTPUT_FILE = './earthquake_tsunami_raw_data_pred.csv'
 
 TARGET_COLUMNS = [
     'title',

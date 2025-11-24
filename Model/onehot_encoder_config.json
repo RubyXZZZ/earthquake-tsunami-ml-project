@@ -1,0 +1,25 @@
+{
+    "feature_names": [
+        "magType_mb",
+        "magType_ml",
+        "magType_mw",
+        "magType_mwb",
+        "magType_mwc",
+        "magType_mwr",
+        "magType_mww"
+    ],
+    "categories": [
+        [
+            "mb",
+            "ml",
+            "mw",
+            "mwb",
+            "mwc",
+            "mwr",
+            "mww"
+        ]
+    ],
+    "target_cols": [
+        "magType"
+    ]
+}
