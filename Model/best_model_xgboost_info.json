@@ -1,19 +1,20 @@
 {
     "model_name": "XGBoost Best Model",
     "hyperparameters": {
-        "n_estimators": 270,
-        "max_depth": 12,
-        "learning_rate": 0.095742170086362,
-        "subsample": 0.8621142065155597,
-        "colsample_bytree": 0.8376894813899407,
-        "gamma": 2.5638713099483805,
-        "min_child_weight": 5
+        "n_estimators": 295,
+        "max_depth": 10,
+        "learning_rate": 0.01671062693949045,
+        "subsample": 0.8832194919440503,
+        "colsample_bytree": 0.8432006364092313,
+        "gamma": 0.35502084329539707,
+        "reg_lambda": 4.33648788651488,
+        "min_child_weight": 4
     },
     "test_performance": {
-        "accuracy": 0.9090909090909091,
-        "precision_class1": 0.8512396694214877,
-        "recall_class1": 0.8803418803418803,
-        "f1_class1": 0.865546218487395,
-        "roc_auc": 0.9428259683578832
+        "accuracy": 0.9119318181818182,
+        "precision_class1": 0.864406779661017,
+        "recall_class1": 0.8717948717948718,
+        "f1_class1": 0.8680851063829788,
+        "roc_auc": 0.9445353700672849
     }
 }
