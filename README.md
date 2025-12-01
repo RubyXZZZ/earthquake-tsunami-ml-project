@@ -32,7 +32,7 @@ earthquake-tsunami-ml-project/
 │   ├── y_test.csv                                      # Cleaned data for testing models - X
 │
 ├── Notebooks/
-│   ├── 01_Explanatory Data Analysis.ipynb              # EDA
+│   ├── 01_Exploratory Data Analysis.ipynb              # EDA
 │   ├── 02_Data Processing and Modeling.ipynb           # Data cleaning, processing and modeling
 │   ├── 03_Prediction.ipynb                             # Prediction demo notebook 
 │
@@ -56,27 +56,58 @@ earthquake-tsunami-ml-project/
 └── README.md
 ```
 
-## Installation
-**Note**: Check environment information in `requirements.txt`.
+## Set up Environment
+#### 1. **Clone Repository**:
 ```bash
 git clone https://github.com/RubyXZZZ/earthquake-tsunami-ml-project.git
 cd earthquake-tsunami-ml-project
+```
+#### 2. **Create and Activate Virtual Environment**:
+```bash
+# Using conda (Recommended)
+conda create --name your_env_name python=3.13
+conda activate your_env_name
+
+# Or using venv (Requires Python 3.13)
+python -m venv your_venv_name
+# MacOs/Linux
+source your_venv_name/bin/activate
+# Windows
+.\your_venv_name\Scripts\activate
+```
+#### 3. **Install Dependencies**:
+**Note**: Check environment information in `requirements.txt`.
+```bash
 pip install -r requirements.txt
 ```
 
-## Usage
+## How to Run
 #### 1. **Collect Data Script**:
-**Note**: Data is already stored in the `Data/earthquake_tsunami_raw_data.csv`. If you want to re-run the script, you can run `collect_earthquake_data.py`. You can also modify the data range parameters and output file path in the script.
+**Note**: Data is already stored in the `Data/earthquake_tsunami_raw_data.csv`. 
+If you want to re-run the script, you can run `collect_earthquake_data.py`. 
+You can also modify the data range parameters and output file path in the script. 
+Please rename the output file path to avoid overwriting existing files.
 ```bash
 cd Data
 python collect_earthquake_data.py
 ```
-#### 2. **Notebook**:
-**Note**: Make sure that mark notebook as trusted in your IDE.
+#### 2. **Jupyter Notebooks**:
+**Note**: Make sure to mark notebook as trusted in your IDE. 
+Open and run the notebooks in order:
+1. 01_Exploratory Data Analysis.ipynb
+2. 02_Data Processing and Modeling.ipynb
+3. 03_Prediction.ipynb
 ```bash
 cd Notebooks
 ```
-
+#### 3. **Streamlit App**:
+**Note**: Please use terminal to run the app. If the terminal asks for your email address, please ignore it and press Enter/Return.
+When using the app, please enter legit numbers for manual input section.
+```bash
+cd App
+streamlit run app.py
+```
+The app will open at http://localhost:8501
 
 
 ## Data Source
