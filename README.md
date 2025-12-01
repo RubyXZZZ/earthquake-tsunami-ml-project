@@ -57,6 +57,7 @@ earthquake-tsunami-ml-project/
 ```
 
 ## Installation
+**Note**: Check environment information in `requirements.txt`.
 ```bash
 git clone https://github.com/RubyXZZZ/earthquake-tsunami-ml-project.git
 cd earthquake-tsunami-ml-project
