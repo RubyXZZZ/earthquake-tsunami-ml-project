@@ -10,7 +10,7 @@ st.set_page_config(
     layout="wide"
 )
 
-st.markdown("<h1 style='text-align: center;'>🌊 Earthquake Tsunami Prediction System</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>Earthquake Tsunami Prediction System</h1>", unsafe_allow_html=True)
 st.markdown("---")
 
 @st.cache_resource
@@ -103,7 +103,7 @@ def process_data(df, drop_columns, medians, ohe, ohe_config, standard_scaler, st
     return df, original_df
 
 
-st.subheader("📝 Input Method")
+st.subheader("Input Method")
 input_method = st.radio(
     "You can input your own data or use our preloaded data",
     ["Manual Input", "Load Demo Data (7 samples)"],
@@ -162,7 +162,6 @@ if input_method == "Manual Input":
                 )
 
                 prediction = model.predict(input_processed)[0]
-                # print(prediction)
                 try:
                     proba = model.predict_proba(input_processed)[0]
                     confidence = max(proba) * 100
@@ -235,7 +234,7 @@ else:
 
 if st.session_state.prediction_made and st.session_state.results is not None:
     st.markdown("---")
-    st.subheader("📊 Prediction Results")
+    st.subheader("Prediction Results")
 
     results = st.session_state.results
 
@@ -244,14 +243,14 @@ if st.session_state.prediction_made and st.session_state.results is not None:
         confidence = results["confidence"]
 
         if prediction == 1:
-            st.markdown("<h2 style='color: #cc0000; text-align: center;'>🌊 TSUNAMI PREDICTED</h2>",
+            st.markdown("<h2 style='color: #cc0000; text-align: center;'>TSUNAMI PREDICTED</h2>",
                         unsafe_allow_html=True)
             st.markdown(
                 f"<p style='text-align: center;'><strong>Confidence:</strong> {confidence:.1f}%</p>"
                 if confidence else "<p style='text-align: center;'><strong>Confidence:</strong> N/A</p>",
                 unsafe_allow_html=True)
         else:
-            st.markdown("<h2 style='color: #006600; text-align: center;'>✅ NO TSUNAMI PREDICTED</h2>",
+            st.markdown("<h2 style='color: #006600; text-align: center;'>NO TSUNAMI PREDICTED</h2>",
                         unsafe_allow_html=True)
             st.markdown(
                 f"<p style='text-align: center;'><strong>Confidence:</strong> {confidence:.1f}%</p>"
