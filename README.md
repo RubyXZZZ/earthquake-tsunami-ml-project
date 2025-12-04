@@ -50,7 +50,7 @@ earthquake-tsunami-ml-project/
 │   └──                # pdf version of slides
 │
 ├── Summary/
-│   ├──                # Summary report
+│   ├── Project Summary.pdf               # Summary report
 │   
 ├── requirements.txt           # Python dependencies
 └── README.md
