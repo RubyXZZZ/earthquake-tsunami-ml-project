@@ -92,7 +92,10 @@ cd Data
 python collect_earthquake_data.py
 ```
 #### 2. **Jupyter Notebooks**:
-**Note**: Make sure to mark notebook as trusted in your IDE. 
+**Note**: If you do not see any pictures or texts, please close and reopen the notebooks. This may be due to the large amount of pictures in the notebooks.<br>
+There is an interactive heatmap at the end of `01_Exploratory Data Analysis.ipynb`, make sure to run this notebook locally to view the map.
+Also please make sure to mark notebooks as trusted in your IDE. If you are using Jupyter Notebook/Jupyter Lab, navigate to the file menu at the top of the interface then select the "trust notebook" option.
+If you are using Pycharm, the "trust notebook" option is at the top right of the interface. <br>
 Open and run the notebooks in order:
 1. 01_Exploratory Data Analysis.ipynb
 2. 02_Data Processing and Modeling.ipynb
