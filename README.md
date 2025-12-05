@@ -104,7 +104,7 @@ Open and run the notebooks in order:
 cd Notebooks
 ```
 #### 3. **Streamlit App**:
-**Note**: Please use terminal to run the app. If the terminal asks for your email address, please ignore it and press Enter/Return.
+**Note**: Please use terminal to run the app. Please make sure to navigate into the App folder before running the Streamlit App. If the terminal asks for your email address, please ignore it and press Enter/Return.
 When using the app, please enter legit numbers for manual input section.
 ```bash
 cd App
