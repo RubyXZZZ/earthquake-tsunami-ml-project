@@ -26,10 +26,10 @@ earthquake-tsunami-ml-project/
 │
 ├── Data/
 │   ├── collect_earthquake_data.py                      # USGS API data collection script
-│   ├── earthquake_tsunami_raw_data.csv                 # Raw USGS earthquake data (2013.1.1 - 2025.10.31) for modeling 
-│   ├── earthquake_tsunami_raw_data_pred.csv            # Raw USGS earthquake data (2025.11.1 - 2025.11.20) for prediction
+│   ├── earthquake_tsunami_raw_data.csv                 # Raw USGS earthquake data (1/1/2013-10/31/2025) for modeling 
+│   ├── earthquake_tsunami_raw_data_pred.csv            # Raw USGS earthquake data (11/1/2025-11/20/2025) for prediction
 │   ├── X_test.csv                                      # Cleaned data for testing models - X
-│   ├── y_test.csv                                      # Cleaned data for testing models - X
+│   ├── y_test.csv                                      # Cleaned data for testing models - y
 │
 ├── Notebooks/
 │   ├── 01_Exploratory Data Analysis.ipynb              # EDA
@@ -46,11 +46,10 @@ earthquake-tsunami-ml-project/
 │   └── column_medians.json            # Median values for imputation
 │
 ├── Slides/
-│   ├──                # PPT for presentation
-│   └──                # pdf version of slides
+│   └──FinalProject_Slides.pdf         # pdf version of slides
 │
 ├── Summary/
-│   ├── Project Summary.pdf               # Summary report
+│   ├── Project Summary.pdf            # Summary report
 │   
 ├── requirements.txt           # Python dependencies
 └── README.md
