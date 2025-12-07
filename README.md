@@ -26,8 +26,8 @@ earthquake-tsunami-ml-project/
 │
 ├── Data/
 │   ├── collect_earthquake_data.py                      # USGS API data collection script
-│   ├── earthquake_tsunami_raw_data.csv                 # Raw USGS earthquake data (1/1/2013-10/31/2025) for modeling 
-│   ├── earthquake_tsunami_raw_data_pred.csv            # Raw USGS earthquake data (11/1/2025-11/20/2025) for prediction
+│   ├── earthquake_tsunami_raw_data.csv                 # Raw dataset (1/1/2013-10/31/2025) for modeling 
+│   ├── earthquake_tsunami_raw_data_pred.csv            # Raw dataset (11/1/2025-11/20/2025) for prediction
 │   ├── X_test.csv                                      # Cleaned data for testing models - X
 │   ├── y_test.csv                                      # Cleaned data for testing models - y
 │
