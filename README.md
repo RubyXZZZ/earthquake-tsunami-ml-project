@@ -1,4 +1,4 @@
-# Tsunami Risk Prediction
+# Earthquake - Tsunami Prediction System
 
 Machine learning models for predicting tsunami occurrence using USGS seismic data.
 
