@@ -135,7 +135,7 @@ if input_method == "Manual Input":
         )
         rms = st.text_input("RMS (root mean square travel time residual)", placeholder="e.g., 0.95", help="Root mean square travel time residual")
     st.markdown("---")
-    if st.button("PREDICT TSUNAMI RISK", key="manual_predict", type="primary", use_container_width=True):
+    if st.button("PREDICT TSUNAMI RISK", key="manual_predict", type="primary", width='stretch'):
         try:
             input_data = pd.DataFrame({
                 "magnitude": [float(magnitude)],
@@ -190,10 +190,10 @@ else:
         st.write("Preview of demo data:")
         preview_cols = ["magnitude", "dmin", "gap", "depth", "latitude", "longitude", "year", "month", "magType", "rms"]
         display_cols = [col for col in preview_cols if col in df_X.columns]
-        st.dataframe(df_X[display_cols], use_container_width=True)
+        st.dataframe(df_X[display_cols], width='stretch')
         st.markdown("---")
 
-        if st.button("PREDICT TSUNAMI RISK", key="demo_predict", type="primary", use_container_width=True):
+        if st.button("PREDICT TSUNAMI RISK", key="demo_predict", type="primary", width='stretch'):
             if model is not None and scaler is not None:
                 try:
                     demo_processed, demo_original = process_data(
@@ -258,7 +258,7 @@ if st.session_state.prediction_made and st.session_state.results is not None:
                 unsafe_allow_html=True)
 
         st.markdown("#### Input Parameters Used:")
-        st.dataframe(results['input_data'], use_container_width=True)
+        st.dataframe(results['input_data'], width='stretch')
 
     else:
         predictions = results["predictions"]
@@ -284,7 +284,7 @@ if st.session_state.prediction_made and st.session_state.results is not None:
             results_df["Actual"] = ["Tsunami" if a == 1 else "No Tsunami" for a in actual]
             results_df["Correct"] = ["✅" if p == a else "❌" for p, a in zip(predictions, actual)]
 
-        st.dataframe(results_df, use_container_width=True)
+        st.dataframe(results_df, width='stretch')
 
 
 
